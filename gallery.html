@@ -1,431 +1,528 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>EMBER COFFEE | Gallery</title>
-        <link href="vendor/bootstrap.min.css" rel="stylesheet" />
-        <script src="js/store.js"></script>
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/final.css" />
-        <script src="vendor/jquery-4.0.0.min.js"></script>
-        <script src="js/script.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMBER COFFEE | Gallery</title>
 
-    <body>
-        <a class="skip-link" href="#main-content">Skip to content</a>
-        <div
-            class="scroll-progress"
-            role="progressbar"
-            aria-label="Reading progress"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow="0"
-        >
-            <span></span>
-        </div>
-        <div id="toast-message" class="ember-toast" role="status" aria-live="polite"></div>
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/final.css">
 
-        <div class="page-layout">
-            <!-- Header -->
-            <header id="main-header">
-                <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
-                    <div class="container px-sm-2">
-                        <a href="index.html" class="navbar-brand logo">EMBER.</a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#primary-navigation"
-                            aria-controls="primary-navigation"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="primary-navigation">
-                            <ul class="navbar-nav ms-auto nav-menu">
-                                <li class="nav-item">
-                                    <a href="index.html" class="nav-link">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="menu.html" class="nav-link">Menu</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">Our Story</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Visit Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a
-                                        href="gallery.html"
-                                        class="nav-link active"
-                                        aria-current="page"
-                                        >Gallery</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+    <script src="js/store.js"></script>
+    <script src="vendor/jquery-4.0.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
 
-            <!-- Sidebar -->
-            <aside class="gallery-sidebar">
-                <div class="container">
-                    <p class="label">EMBER COFFEE</p>
+<body>
 
-                    <h3>Gallery</h3>
+<a class="skip-link" href="#main-content">
+    Skip to content
+</a>
 
-                    <p>A collection of our coffee, space, and everyday moments.</p>
+<div class="scroll-progress"
+     role="progressbar"
+     aria-label="Reading progress"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="0">
+    <span></span>
+</div>
 
-                    <a href="menu.html" class="btn btn-outline-primary button button-dark">
-                        View Menu
-                    </a>
+<div id="toast-message"
+     class="ember-toast"
+     role="status"
+     aria-live="polite">
+</div>
+
+<!-- NAVIGATION -->
+<header id="main-header">
+    <nav class="navbar navbar-expand-lg py-3"
+         aria-label="Main navigation">
+
+        <div class="container px-sm-2">
+
+            <a href="index.html" class="navbar-brand logo">
+                EMBER.
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#primary-navigation"
+                    aria-controls="primary-navigation"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse"
+                 id="primary-navigation">
+
+                <ul class="navbar-nav ms-auto nav-menu">
+
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link">
+                            Menu
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            Our Story
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            Visit Us
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="gallery.html"
+                           class="nav-link active"
+                           aria-current="page">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="login.html"
+                           class="nav-link"
+                           id="account-link">
+                            Sign in
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="appearance-tools"
+                     aria-label="Appearance">
+
+                    <button type="button"
+                            class="appearance-button"
+                            id="change-background"
+                            title="Change page color">
+                        ◐ <span id="palette-name">Cream</span>
+                    </button>
+
+                    <button type="button"
+                            class="appearance-button"
+                            id="theme-toggle"
+                            aria-pressed="false">
+                        ☾ <span>Dark mode</span>
+                    </button>
+
                 </div>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="gallery-main" id="main-content">
-                <section class="section">
-                    <div class="container">
-                        <p class="label">Inside EMBER</p>
-
-                        <h1>Our Gallery</h1>
-
-                        <p>
-                            Coffee, cafe spaces and small rituals. A collection of stock photographs
-                            that inspire the EMBER concept.
-                        </p>
-
-                        <div
-                            id="ember-gallery-carousel"
-                            class="carousel slide gallery-carousel mt-4"
-                            data-bs-ride="false"
-                            role="region"
-                            aria-roledescription="carousel"
-                            aria-label="EMBER COFFEE photo gallery"
-                        >
-                            <div class="carousel-indicators">
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="0"
-                                    class="active"
-                                    aria-current="true"
-                                    aria-label="Show At the coffee bar"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="1"
-                                    aria-label="Show Espresso"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="2"
-                                    aria-label="Show Velvet Latte"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="3"
-                                    aria-label="Show Cappuccino"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="4"
-                                    aria-label="Show A quiet corner"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="5"
-                                    aria-label="Show Freshly brewed"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="6"
-                                    aria-label="Show Coffee break"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="7"
-                                    aria-label="Show Matcha Latte"
-                                ></button>
-                                <button
-                                    type="button"
-                                    data-bs-target="#ember-gallery-carousel"
-                                    data-bs-slide-to="8"
-                                    aria-label="Show Over ice"
-                                ></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img
-                                        class="d-block w-100"
-                                        alt="Warm cafe counter with a menu board and pastry display"
-                                        src="images/hero.jpg"
-                                        width="1600"
-                                        height="1000"
-                                        decoding="async"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>At the coffee bar</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Espresso in a red cup beside roasted coffee beans"
-                                        data-src="images/espresso.jpg"
-                                        width="800"
-                                        height="600"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>Espresso</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Latte with milk foam in a glass cup on a saucer"
-                                        data-src="images/latte.jpg"
-                                        width="800"
-                                        height="600"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>Velvet Latte</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Cappuccino with latte art in a ribbed ceramic cup"
-                                        data-src="images/cappuccino.jpg"
-                                        width="800"
-                                        height="600"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>Cappuccino</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Wooden tables and chairs in a softly lit cafe interior"
-                                        data-src="images/interior.jpg"
-                                        width="800"
-                                        height="1000"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>A quiet corner</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Black coffee in a glass mug on a coffee machine"
-                                        data-src="images/americano.jpg"
-                                        width="800"
-                                        height="600"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>Freshly brewed</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Flat white with latte art beside a laptop"
-                                        data-src="images/flat-white.jpg"
-                                        width="800"
-                                        height="600"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>Coffee break</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Green matcha latte in ceramic cups, seen from above"
-                                        data-src="images/matcha.jpg"
-                                        width="800"
-                                        height="600"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>Matcha Latte</h3>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="lazy-image d-block w-100"
-                                        alt="Cold brew coffee with ice in a glass on a tray"
-                                        data-src="images/cold-brew.jpg"
-                                        width="800"
-                                        height="600"
-                                        decoding="async"
-                                        loading="lazy"
-                                    />
-                                    <div class="carousel-caption gallery-caption">
-                                        <h3>Over ice</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <button
-                                class="carousel-control-prev"
-                                type="button"
-                                data-bs-target="#ember-gallery-carousel"
-                                data-bs-slide="prev"
-                            >
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous image</span>
-                            </button>
-                            <button
-                                class="carousel-control-next"
-                                type="button"
-                                data-bs-target="#ember-gallery-carousel"
-                                data-bs-slide="next"
-                            >
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next image</span>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <div class="container">
-                        <p class="label">A closer look</p>
-                        <h2>Everyday moments.</h2>
-                        <div class="photo-grid">
-                            <figure>
-                                <img
-                                    class="lazy-image"
-                                    data-src="images/croissant.jpg"
-                                    width="800"
-                                    height="600"
-                                    alt="Golden croissant on a dark ceramic plate"
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                                <figcaption>Golden croissant on a dark ceramic plate</figcaption>
-                            </figure>
-                            <figure>
-                                <img
-                                    class="lazy-image"
-                                    data-src="images/cinnamon-roll.jpg"
-                                    width="800"
-                                    height="600"
-                                    alt="Iced cinnamon roll on a ceramic plate"
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                                <figcaption>Iced cinnamon roll on a ceramic plate</figcaption>
-                            </figure>
-                            <figure>
-                                <img
-                                    class="lazy-image"
-                                    data-src="images/banana-bread.jpg"
-                                    width="800"
-                                    height="600"
-                                    alt="Sliced banana bread with walnuts"
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                                <figcaption>Sliced banana bread with walnuts</figcaption>
-                            </figure>
-                            <figure>
-                                <img
-                                    class="lazy-image"
-                                    data-src="images/interior.jpg"
-                                    width="800"
-                                    height="1000"
-                                    alt="Wooden tables and chairs in a softly lit cafe interior"
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                                <figcaption>
-                                    Wooden tables and chairs in a softly lit cafe interior
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img
-                                    class="lazy-image"
-                                    data-src="images/matcha.jpg"
-                                    width="800"
-                                    height="600"
-                                    alt="Green matcha latte in ceramic cups, seen from above"
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                                <figcaption>
-                                    Green matcha latte in ceramic cups, seen from above
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img
-                                    class="lazy-image"
-                                    data-src="images/latte.jpg"
-                                    width="800"
-                                    height="600"
-                                    alt="Latte with milk foam in a glass cup on a saucer"
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                                <figcaption>
-                                    Latte with milk foam in a glass cup on a saucer
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <!-- Footer -->
-            <footer>
-                <div class="container">
-                    <p>EMBER COFFEE · Astana, Kazakhstan</p>
-
-                    <p>Created by Aslan Ulasbek &amp; Sultonbek Ibrokhimov</p>
-                    <p class="current-date-time" id="current-date-time"></p>
-
-                    <p class="photo-credit">
-                        Student cafe concept · Illustrative photography from
-                        <a href="https://www.pexels.com/">Pexels</a>.
-                        <a href="PHOTO_SOURCES.md">Photo sources</a>.
-                    </p>
-                </div>
-            </footer>
+            </div>
         </div>
+    </nav>
+</header>
 
-        <script src="vendor/bootstrap.bundle.min.js"></script>
-        <script src="js/validation.js"></script>
-        <script src="js/base.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/advanced.js"></script>
-            <script src="js/menu-data.js"></script>
-        <script src="js/catalog.js"></script>
-        <script src="js/order.js"></script>
-    </body>
+<!-- MAIN CONTENT -->
+<main id="main-content">
+
+    <!-- PAGE INTRODUCTION -->
+    <section class="page-header">
+        <div class="container">
+
+            <p class="label">Inside EMBER</p>
+
+            <h1>Our Gallery</h1>
+
+            <p>
+                Coffee, cafe spaces and small rituals.
+                A collection of stock photographs
+                that inspire the EMBER concept.
+            </p>
+
+            <a href="menu.html"
+               class="btn btn-outline-primary button">
+                View Menu
+            </a>
+
+        </div>
+    </section>
+
+    <!-- IMAGE CAROUSEL -->
+    <section class="section">
+        <div class="container">
+
+            <div id="ember-gallery-carousel"
+                 class="carousel slide gallery-carousel mt-4"
+                 data-bs-ride="false"
+                 role="region"
+                 aria-roledescription="carousel"
+                 aria-label="EMBER COFFEE photo gallery">
+
+                <div class="carousel-indicators">
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Show At the coffee bar">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="1"
+                            aria-label="Show Espresso">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="2"
+                            aria-label="Show Velvet Latte">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="3"
+                            aria-label="Show Cappuccino">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="4"
+                            aria-label="Show A quiet corner">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="5"
+                            aria-label="Show Freshly brewed">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="6"
+                            aria-label="Show Coffee break">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="7"
+                            aria-label="Show Matcha Latte">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#ember-gallery-carousel"
+                            data-bs-slide-to="8"
+                            aria-label="Show Over ice">
+                    </button>
+
+                </div>
+
+                <div class="carousel-inner">
+
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-item active">
+                        <img src="images/hero.jpg"
+                             class="d-block w-100"
+                             alt="Warm cafe counter with a menu board and pastry display"
+                             width="1600"
+                             height="1000"
+                             decoding="async">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>At the coffee bar</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 -->
+                    <div class="carousel-item">
+                        <img data-src="images/espresso.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Espresso in a red cup beside roasted coffee beans"
+                             width="800"
+                             height="600"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>Espresso</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 3 -->
+                    <div class="carousel-item">
+                        <img data-src="images/latte.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Latte with milk foam in a glass cup"
+                             width="800"
+                             height="600"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>Velvet Latte</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 4 -->
+                    <div class="carousel-item">
+                        <img data-src="images/cappuccino.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Cappuccino with latte art"
+                             width="800"
+                             height="600"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>Cappuccino</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 5 -->
+                    <div class="carousel-item">
+                        <img data-src="images/interior.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Wooden tables and chairs in a softly lit cafe"
+                             width="800"
+                             height="1000"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>A quiet corner</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 6 -->
+                    <div class="carousel-item">
+                        <img data-src="images/americano.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Black coffee in a glass mug"
+                             width="800"
+                             height="600"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>Freshly brewed</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 7 -->
+                    <div class="carousel-item">
+                        <img data-src="images/flat-white.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Flat white beside a laptop"
+                             width="800"
+                             height="600"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>Coffee break</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 8 -->
+                    <div class="carousel-item">
+                        <img data-src="images/matcha.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Green matcha latte in ceramic cups"
+                             width="800"
+                             height="600"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>Matcha Latte</h3>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 9 -->
+                    <div class="carousel-item">
+                        <img data-src="images/cold-brew.jpg"
+                             class="lazy-image d-block w-100"
+                             alt="Cold brew coffee with ice"
+                             width="800"
+                             height="600"
+                             decoding="async"
+                             loading="lazy">
+
+                        <div class="carousel-caption gallery-caption">
+                            <h3>Over ice</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CAROUSEL CONTROLS -->
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#ember-gallery-carousel"
+                        data-bs-slide="prev">
+
+                        <span class="carousel-control-prev-icon"
+                              aria-hidden="true"></span>
+
+                    <span class="visually-hidden">
+                            Previous image
+                        </span>
+                </button>
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#ember-gallery-carousel"
+                        data-bs-slide="next">
+
+                        <span class="carousel-control-next-icon"
+                              aria-hidden="true"></span>
+
+                    <span class="visually-hidden">
+                            Next image
+                        </span>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GRID -->
+    <section class="section">
+        <div class="container">
+
+            <p class="label">A closer look</p>
+            <h2>Everyday moments.</h2>
+
+            <div class="photo-grid">
+
+                <figure>
+                    <img class="lazy-image"
+                         data-src="images/croissant.jpg"
+                         width="800"
+                         height="600"
+                         alt="Golden croissant on a dark ceramic plate"
+                         decoding="async"
+                         loading="lazy">
+
+                    <figcaption>
+                        Golden croissant on a dark ceramic plate
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="lazy-image"
+                         data-src="images/cinnamon-roll.jpg"
+                         width="800"
+                         height="600"
+                         alt="Iced cinnamon roll on a ceramic plate"
+                         decoding="async"
+                         loading="lazy">
+
+                    <figcaption>
+                        Iced cinnamon roll on a ceramic plate
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="lazy-image"
+                         data-src="images/banana-bread.jpg"
+                         width="800"
+                         height="600"
+                         alt="Sliced banana bread with walnuts"
+                         decoding="async"
+                         loading="lazy">
+
+                    <figcaption>
+                        Sliced banana bread with walnuts
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="lazy-image"
+                         data-src="images/interior.jpg"
+                         width="800"
+                         height="1000"
+                         alt="Wooden tables and chairs in a cafe"
+                         decoding="async"
+                         loading="lazy">
+
+                    <figcaption>
+                        Wooden tables and chairs in a softly lit cafe
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="lazy-image"
+                         data-src="images/matcha.jpg"
+                         width="800"
+                         height="600"
+                         alt="Green matcha latte in ceramic cups"
+                         decoding="async"
+                         loading="lazy">
+
+                    <figcaption>
+                        Green matcha latte in ceramic cups
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="lazy-image"
+                         data-src="images/latte.jpg"
+                         width="800"
+                         height="600"
+                         alt="Latte with milk foam in a glass cup"
+                         decoding="async"
+                         loading="lazy">
+
+                    <figcaption>
+                        Latte with milk foam in a glass cup
+                    </figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <p>EMBER COFFEE · Astana, Kazakhstan</p>
+
+        <p>
+            Created by Aslan Ulasbek &amp;
+            Sultonbek Ibrokhimov
+        </p>
+
+        <p class="current-date-time"
+           id="current-date-time"></p>
+
+        <p class="photo-credit">
+            Student cafe concept · Illustrative photography from
+            <a href="https://www.pexels.com/">Pexels</a>.
+            <a href="PHOTO_SOURCES.md">Photo sources</a>.
+        </p>
+
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/base.js"></script>
+<script src="js/app.js"></script>
+<script src="js/advanced.js"></script>
+<script src="js/menu-data.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/order.js"></script>
+
+</body>
 </html>
