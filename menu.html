@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EMBER COFFEE | Menu</title>
+        <link href="vendor/bootstrap.min.css" rel="stylesheet" />
+        <script src="js/store.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/final.css" />
+        <script src="vendor/jquery-4.0.0.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <div
+            class="scroll-progress"
+            role="progressbar"
+            aria-label="Reading progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+        >
+            <span></span>
+        </div>
+        <div id="toast-message" class="ember-toast" role="status" aria-live="polite"></div>
+
+        <header id="main-header">
+            <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+                <div class="container px-sm-2">
+                    <a href="index.html" class="navbar-brand logo">EMBER.</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#primary-navigation"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="primary-navigation">
+                        <ul class="navbar-nav ms-auto nav-menu">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item">
+                                <a href="menu.html" class="nav-link active" aria-current="page"
+                                    >Menu</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">Our Story</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Visit Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="gallery.html" class="nav-link">Gallery</a>
+                            </li>
+                        <li class="nav-item"><a href="login.html" class="nav-link" id="account-link">Sign in</a></li>
+                        </ul>
+                        <div class="appearance-tools" aria-label="Appearance">
+                            <button type="button" class="appearance-button" id="change-background" title="Change page color">◐ <span id="palette-name">Cream</span></button>
+                            <button type="button" class="appearance-button" id="theme-toggle" aria-pressed="false">☾ <span>Dark mode</span></button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="page-header">
+                <div class="container">
+                    <h1>The menu.</h1>
+                    <p>Your favorites and a few new discoveries, carefully made.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <img
+                        src="images/hero.jpg"
+                        alt="Warm cafe counter with a menu board and pastry display"
+                        class="menu-banner mb-5"
+                        width="1600"
+                        height="1000"
+                        decoding="async"
+                        loading="lazy"
+                    />
+
+                    <div class="menu-tools">
+                        <p class="label">Find your favorite</p>
+                        <div class="search-wrap">
+                            <label for="menu-search">Search the menu</label>
+                            <input
+                                id="menu-search"
+                                class="form-control"
+                                type="search"
+                                placeholder="Try latte or chocolate"
+                                autocomplete="off"
+                                role="combobox"
+                                aria-autocomplete="list"
+                                aria-expanded="false"
+                                aria-controls="search-suggestions"
+                            />
+                            <ul
+                                id="search-suggestions"
+                                class="search-suggestions"
+                                role="listbox"
+                                aria-label="Menu suggestions"
+                                hidden=""
+                            ></ul>
+                        </div>
+                        <label for="menu-category">Category</label>
+                        <select id="menu-category" class="form-select">
+                            <option value="all">All items</option>
+                            <option value="coffee">Coffee</option>
+                            <option value="other">Something else</option>
+                            <option value="bakery">Bakery</option>
+                        </select>
+                        <div class="menu-extra-tools">
+                            <div>
+                                <label for="menu-sort">Sort by price</label>
+                                <select id="menu-sort" class="form-select">
+                                    <option value="default">Default order</option>
+                                    <option value="asc">Price: low to high</option>
+                                    <option value="desc">Price: high to low</option>
+                                </select>
+                            </div>
+                            <fieldset class="menu-extra-filters">
+                                <legend>More filters</legend>
+                                <label><input type="checkbox" id="filter-cold" /> Cold drinks</label>
+                                <label><input type="checkbox" id="filter-decaf" /> Decaf</label>
+                                <label><input type="checkbox" id="filter-plant" /> Plant-based milk available</label>
+                            </fieldset>
+                        </div>
+                        <p id="search-count" role="status"></p>
+                    </div>
+                    <div id="menu-catalog"></div>
+                </div>
+            </section>
+
+            <section class="section rating-section">
+                <div class="container">
+                    <p class="label">Your coffee moment</p>
+                    <h2>How was your visit?</h2>
+                    <div class="rating-stars" role="group" aria-label="Rate your visit">
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="1"
+                            aria-label="1 stars"
+                            aria-pressed="false"
+                        >
+                            ★
+                        </button>
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="2"
+                            aria-label="2 stars"
+                            aria-pressed="false"
+                        >
+                            ★
+                        </button>
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="3"
+                            aria-label="3 stars"
+                            aria-pressed="false"
+                        >
+                            ★
+                        </button>
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="4"
+                            aria-label="4 stars"
+                            aria-pressed="false"
+                        >
+                            ★
+                        </button>
+                        <button
+                            type="button"
+                            class="rating-star"
+                            data-rating="5"
+                            aria-label="5 stars"
+                            aria-pressed="false"
+                        >
+                            ★
+                        </button>
+                    </div>
+                    <p id="rating-message" role="status">
+                        Your personal rating for this visit. Choose 1 to 5 stars.
+                    </p>
+                    <button
+                        type="button"
+                        id="sound-toggle"
+                        class="btn btn-outline-primary"
+                        aria-pressed="false"
+                    >
+                        Sound off
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>EMBER COFFEE · Astana, Kazakhstan</p>
+
+                <p>Created by Aslan Ulasbek &amp; Sultonbek Ibrokhimov</p>
+                <p class="current-date-time" id="current-date-time"></p>
+                <p class="photo-credit">
+                    Student cafe concept · Illustrative photography from
+                    <a href="https://www.pexels.com/">Pexels</a>.
+                    <a href="PHOTO_SOURCES.md">Photo sources</a>.
+                </p>
+            </div>
+        </footer>
+
+        <script src="vendor/bootstrap.bundle.min.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/base.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/advanced.js"></script>
+        <script src="js/menu-data.js"></script>
+        <script src="js/catalog.js"></script>
+        <script src="js/order.js"></script>
+    </body>
+</html>

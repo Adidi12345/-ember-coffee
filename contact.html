@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EMBER COFFEE | Visit Us</title>
+        <link href="vendor/bootstrap.min.css" rel="stylesheet" />
+        <script src="js/store.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/final.css" />
+        <script src="vendor/jquery-4.0.0.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <div
+            class="scroll-progress"
+            role="progressbar"
+            aria-label="Reading progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+        >
+            <span></span>
+        </div>
+        <div id="toast-message" class="ember-toast" role="status" aria-live="polite"></div>
+
+        <header id="main-header">
+            <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+                <div class="container px-sm-2">
+                    <a href="index.html" class="navbar-brand logo">EMBER.</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#primary-navigation"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="primary-navigation">
+                        <ul class="navbar-nav ms-auto nav-menu">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">Our Story</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link active" aria-current="page"
+                                    >Visit Us</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="gallery.html" class="nav-link">Gallery</a>
+                            </li>
+                        <li class="nav-item"><a href="login.html" class="nav-link" id="account-link">Sign in</a></li>
+                        </ul>
+                        <div class="appearance-tools" aria-label="Appearance">
+                            <button type="button" class="appearance-button" id="change-background" title="Change page color">◐ <span id="palette-name">Cream</span></button>
+                            <button type="button" class="appearance-button" id="theme-toggle" aria-pressed="false">☾ <span>Dark mode</span></button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="page-header">
+                <div class="container">
+                    <h1>Find your<br />corner.</h1>
+                    <p>Come for the coffee. Stay for the atmosphere.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="row g-5">
+                        <!-- Contact details + opening hours table -->
+                        <div class="contact-info col-12 col-lg-5">
+                            <img
+                                src="images/cappuccino.jpg"
+                                alt="Cappuccino with latte art in a ribbed ceramic cup"
+                                class="menu-banner mb-5"
+                                width="800"
+                                height="600"
+                                decoding="async"
+                                loading="lazy"
+                            />
+
+                            <h2>EMBER COFFEE</h2>
+
+                            <p class="detail-label">Address</p>
+                            <p>Astana, Kazakhstan</p>
+
+                            <p class="detail-label">Email</p>
+                            <p>
+                                <a href="mailto:hello@embercoffee.example">
+                                    hello@embercoffee.example
+                                </a>
+                            </p>
+
+                            <p class="detail-label">Phone</p>
+                            <p><span id="cafe-phone">+7 700 000 00 00</span></p>
+                            <div class="copy-wrap">
+                                <button
+                                    class="btn btn-outline-primary copy-button"
+                                    type="button"
+                                    data-copy-target="cafe-phone"
+                                    aria-describedby="copy-feedback"
+                                >
+                                    <span class="copy-icon" aria-hidden="true">⧉</span> Copy phone</button
+                                ><span
+                                    id="copy-feedback"
+                                    class="copy-feedback"
+                                    role="status"
+                                ></span>
+                            </div>
+
+                            <h3>Opening hours</h3>
+
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Day</th>
+                                            <th scope="col">Opening</th>
+                                            <th scope="col">Closing</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="opening-hours-body">
+                                        <tr>
+                                            <td>Monday - Friday</td>
+                                            <td>08:00</td>
+                                            <td>22:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Saturday</td>
+                                            <td>09:00</td>
+                                            <td>23:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Sunday</td>
+                                            <td>09:00</td>
+                                            <td>21:00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Contact form -->
+                        <div class="col-12 col-lg-7">
+                            <h2>Write to us.</h2>
+
+                            <p>
+                                Try a message about a private event, your favorite coffee or a
+                                future visit.
+                            </p>
+
+                            <p class="form-note">
+                                Demo form. Submission is simulated; no message is delivered and no
+                                booking is made.
+                            </p>
+                            <form id="contact-form" class="p-4 p-md-5" novalidate="">
+                                <p id="form-step-status" tabindex="-1">
+                                    Step 1 of 2 · Your details
+                                </p>
+                                <fieldset id="contact-step-1">
+                                    <legend class="visually-hidden">Your details</legend>
+
+                                    <div class="form-row mb-4">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            autocomplete="name"
+                                            placeholder="Your name"
+                                            class="form-control"
+                                        />
+                                    </div>
+
+                                    <div class="form-row mb-4">
+                                        <label for="email" class="form-label">Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" aria-hidden="true"
+                                                >@</span
+                                            >
+                                            <input
+                                                type="text" inputmode="email"
+                                                id="email"
+                                                name="email"
+                                                autocomplete="email"
+                                                placeholder="you@example.com"
+                                                class="form-control"
+                                            />
+                                        </div>
+                                    </div>
+                                <div class="form-row mb-4"><label for="phone" class="form-label">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+7 700 123 45 67" class="form-control" /></div>
+                                </fieldset>
+                                <fieldset id="contact-step-2" hidden="">
+                                    <legend class="visually-hidden">Your message</legend>
+                                    <div class="form-row mb-4">
+                                        <label for="favorite" class="form-label"
+                                            >Favorite coffee</label
+                                        >
+
+                                        <select id="favorite" name="favorite" class="form-select">
+                                            <option value="espresso">Espresso</option>
+                                            <option value="americano">Americano</option>
+                                            <option value="latte">Velvet Latte</option>
+                                            <option value="cappuccino">Cappuccino</option>
+                                            <option value="flat-white">Flat White</option>
+                                            <option value="cold-brew">Cold Brew</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-row mb-4">
+                                        <label for="color" class="form-label"
+                                            >Pick a color for your cup</label
+                                        >
+
+                                        <input
+                                            type="color"
+                                            id="color"
+                                            name="color"
+                                            value="#6b4c35"
+                                            class="form-control form-control-color"
+                                        />
+
+                                        <div class="cup-preview-panel">
+                                            <div
+                                                class="cup-preview"
+                                                id="cup-preview"
+                                                role="img"
+                                                aria-label="Cup preview in color #6b4c35"
+                                            >
+                                                <span>EMBER.</span>
+                                            </div>
+                                            <p>
+                                                Your cup<br /><output
+                                                    id="cup-color-value"
+                                                    for="color"
+                                                    >#6b4c35</output
+                                                >
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row mb-4">
+                                        <label for="message" class="form-label">Message</label>
+
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            placeholder="Tell us what you need"
+                                            class="form-control"
+                                        ></textarea>
+                                    </div>
+                                </fieldset>
+                                <p id="form-error" class="field-error" role="alert"></p>
+                                <div class="form-actions">
+                                    <button
+                                        id="form-back"
+                                        class="btn btn-outline-primary"
+                                        type="button"
+                                        hidden=""
+                                    >
+                                        Back
+                                    </button>
+                                    <button id="form-next" class="btn btn-primary" type="button">
+                                        Next
+                                    </button>
+                                    <button
+                                        id="form-submit"
+                                        class="btn btn-primary"
+                                        type="submit"
+                                        hidden=""
+                                    >
+                                        Send message
+                                    </button>
+                                    <button
+                                        id="form-reset"
+                                        class="btn btn-outline-primary"
+                                        type="button"
+                                    >
+                                        Clear
+                                    </button>
+                                </div>
+                                <p id="form-success" role="status"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section faq-section" aria-labelledby="faq-title">
+                <div class="container">
+                    <p class="label">Good to know</p>
+                    <h2 id="faq-title">Frequently asked questions.</h2>
+                    <div class="faq-list">
+                        <article class="faq-item">
+                            <h3>
+                                <button
+                                    class="faq-question"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="faq-answer-1"
+                                    id="faq-question-1"
+                                >
+                                    Where is EMBER COFFEE located?
+                                </button>
+                            </h3>
+                            <div
+                                class="faq-answer"
+                                id="faq-answer-1"
+                                role="region"
+                                aria-labelledby="faq-question-1"
+                                hidden=""
+                            >
+                                <div>
+                                    <p>
+                                        EMBER is a student cafe concept set in Astana, Kazakhstan.
+                                        The contact details on this page are examples.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="faq-item">
+                            <h3>
+                                <button
+                                    class="faq-question"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="faq-answer-2"
+                                    id="faq-question-2"
+                                >
+                                    What are your opening hours?
+                                </button>
+                            </h3>
+                            <div
+                                class="faq-answer"
+                                id="faq-answer-2"
+                                role="region"
+                                aria-labelledby="faq-question-2"
+                                hidden=""
+                            >
+                                <div>
+                                    <p>
+                                        We are open Monday to Friday from 08:00 to 22:00, Saturday
+                                        from 09:00 to 23:00, and Sunday from 09:00 to 21:00.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="faq-item">
+                            <h3>
+                                <button
+                                    class="faq-question"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="faq-answer-3"
+                                    id="faq-question-3"
+                                >
+                                    Do you have non-coffee drinks?
+                                </button>
+                            </h3>
+                            <div
+                                class="faq-answer"
+                                id="faq-answer-3"
+                                role="region"
+                                aria-labelledby="faq-question-3"
+                                hidden=""
+                            >
+                                <div>
+                                    <p>
+                                        Yes. Our menu includes matcha latte and hot chocolate,
+                                        alongside coffee and bakery favorites.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="faq-item">
+                            <h3>
+                                <button
+                                    class="faq-question"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="faq-answer-4"
+                                    id="faq-question-4"
+                                >
+                                    Can I contact you about private events?
+                                </button>
+                            </h3>
+                            <div
+                                class="faq-answer"
+                                id="faq-answer-4"
+                                role="region"
+                                aria-labelledby="faq-question-4"
+                                hidden=""
+                            >
+                                <div>
+                                    <p>
+                                        You can try a private-event enquiry in the form above. This
+                                        demonstration validates your details and shows a
+                                        confirmation, but does not deliver a message or make a
+                                        booking.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>EMBER COFFEE · Astana, Kazakhstan</p>
+
+                <p>Created by Aslan Ulasbek &amp; Sultonbek Ibrokhimov</p>
+                <p class="current-date-time" id="current-date-time"></p>
+                <p class="photo-credit">
+                    Student cafe concept · Illustrative photography from
+                    <a href="https://www.pexels.com/">Pexels</a>.
+                    <a href="PHOTO_SOURCES.md">Photo sources</a>.
+                </p>
+            </div>
+        </footer>
+
+        <script src="vendor/bootstrap.bundle.min.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/base.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/advanced.js"></script>
+            <script src="js/menu-data.js"></script>
+        <script src="js/catalog.js"></script>
+        <script src="js/hours.js"></script>
+        <script src="js/order.js"></script>
+    </body>
+</html>

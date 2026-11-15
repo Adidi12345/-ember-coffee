@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   EMBER COFFEE | Manage menu
+  </title>
+  <link href="vendor/bootstrap.min.css" rel="stylesheet"/>
+  <script src="js/store.js">
+  </script>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="css/final.css" rel="stylesheet"/>
+  <script src="vendor/jquery-4.0.0.min.js">
+  </script>
+  <script src="js/script.js">
+  </script>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">
+   Skip to content
+  </a>
+  <div aria-label="Reading progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="scroll-progress" role="progressbar">
+   <span>
+   </span>
+  </div>
+  <div aria-live="polite" class="ember-toast" id="toast-message" role="status">
+  </div>
+  <header id="main-header">
+   <nav aria-label="Main navigation" class="navbar navbar-expand-lg py-3">
+    <div class="container px-sm-2">
+     <a class="navbar-brand logo" href="index.html">
+      EMBER.
+     </a>
+     <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#primary-navigation" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="primary-navigation">
+      <ul class="navbar-nav ms-auto nav-menu">
+       <li class="nav-item">
+        <a class="nav-link" href="index.html">
+         Home
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="menu.html">
+         Menu
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="about.html">
+         Our Story
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="contact.html">
+         Visit Us
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="gallery.html">
+         Gallery
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="login.html" id="account-link">
+         Sign in
+        </a>
+       </li>
+      </ul>
+      <div aria-label="Appearance" class="appearance-tools">
+       <button class="appearance-button" id="change-background" title="Change page color" type="button">
+        ◐
+        <span id="palette-name">
+         Cream
+        </span>
+       </button>
+       <button aria-pressed="false" class="appearance-button" id="theme-toggle" type="button">
+        ☾
+        <span>
+         Dark mode
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main id="main-content">
+   <section class="page-header">
+    <div class="container">
+     <p class="label">
+      EMBER administration
+     </p>
+     <h1>
+      Curate the menu.
+     </h1>
+     <p>
+      Small changes. Better coffee moments.
+     </p>
+     <a class="text-link" href="profile.html">
+      &larr; Back to profile
+     </a>
+    </div>
+   </section>
+   <section class="section" hidden="" id="admin-content">
+    <div class="container admin-layout">
+     <div class="account-card">
+      <h2 id="editor-heading">
+       Add an item.
+      </h2>
+      <form id="menu-editor" novalidate="">
+       <input id="item-id" type="hidden"/>
+       <div class="account-field">
+        <label for="item-name">
+         Item name
+        </label>
+        <input aria-describedby="item-name-error" autocomplete="off" class="form-control" id="item-name" name="item-name" type="text"/>
+        <span class="field-error" id="item-name-error">
+        </span>
+       </div>
+       <div class="account-field">
+        <label for="item-description">
+         Description
+        </label>
+        <input aria-describedby="item-description-error" autocomplete="off" class="form-control" id="item-description" name="item-description" type="text"/>
+        <span class="field-error" id="item-description-error">
+        </span>
+       </div>
+       <div class="account-field">
+        <label for="item-price">
+         Price (₸)
+        </label>
+        <input aria-describedby="item-price-error" autocomplete="off" class="form-control" id="item-price" name="item-price" type="text"/>
+        <small>
+         A positive amount, up to 100,000 ₸.
+        </small>
+        <span class="field-error" id="item-price-error">
+        </span>
+       </div>
+       <div class="account-field">
+        <label for="item-category">
+         Category
+        </label>
+        <select class="form-select" id="item-category">
+         <option value="coffee">
+          Coffee
+         </option>
+         <option value="other">
+          Something else
+         </option>
+         <option value="bakery">
+          Bakery
+         </option>
+        </select>
+       </div>
+       <div class="account-field">
+        <label for="item-image">
+         Photo
+        </label>
+        <select class="form-select" id="item-image">
+         <option value="images/espresso.jpg">
+          Espresso
+         </option>
+         <option value="images/americano.jpg">
+          Americano
+         </option>
+         <option value="images/latte.jpg">
+          Velvet Latte
+         </option>
+         <option value="images/cappuccino.jpg">
+          Cappuccino
+         </option>
+         <option value="images/flat-white.jpg">
+          Flat White
+         </option>
+         <option value="images/cold-brew.jpg">
+          Cold Brew
+         </option>
+         <option value="images/matcha.jpg">
+          Matcha Latte
+         </option>
+         <option value="images/hot-chocolate.jpg">
+          Hot Chocolate
+         </option>
+         <option value="images/croissant.jpg">
+          Butter Croissant
+         </option>
+         <option value="images/cinnamon-roll.jpg">
+          Cinnamon Roll
+         </option>
+         <option value="images/banana-bread.jpg">
+          Banana Bread
+         </option>
+        </select>
+       </div>
+       <fieldset class="admin-capabilities">
+        <legend>
+         Drink options and filters
+        </legend>
+        <p class="demo-note">
+         Tick only the capabilities this item actually has. Bakery has no drink options.
+        </p>
+        <label>
+         <input id="item-size-options" type="checkbox"/>
+         Size selection
+        </label>
+        <label>
+         <input id="item-cold" type="checkbox"/>
+         Cold drink
+        </label>
+        <label>
+         <input id="item-decaf" type="checkbox"/>
+         Decaf
+        </label>
+        <label>
+         <input id="item-plant-milk" type="checkbox"/>
+         Plant-based milk available
+        </label>
+       </fieldset>
+       <div class="form-actions">
+        <button class="btn btn-primary" id="save-item" type="submit">
+         Add item
+        </button>
+        <button class="btn btn-outline-primary" hidden="" id="cancel-edit" type="button">
+         Cancel
+        </button>
+       </div>
+       <p id="admin-status" role="status">
+       </p>
+      </form>
+      <p class="demo-note">
+       Demo administration. Changes apply only to this browser.
+      </p>
+     </div>
+     <div>
+      <div class="section-heading">
+       <h2>
+        Current menu.
+       </h2>
+       <span id="admin-count">
+       </span>
+      </div>
+      <div id="admin-items">
+      </div>
+     </div>
+    </div>
+   </section>
+   <dialog id="delete-dialog">
+    <h2>
+     Remove this item?
+    </h2>
+    <p id="delete-description">
+    </p>
+    <div class="form-actions">
+     <button class="btn btn-primary" id="confirm-delete" type="button">
+      Remove item
+     </button>
+     <button class="btn btn-outline-primary" id="cancel-delete" type="button">
+      Keep item
+     </button>
+    </div>
+   </dialog>
+  </main>
+  <footer>
+   <div class="container">
+    <p>
+     EMBER COFFEE &middot; Astana, Kazakhstan
+    </p>
+    <p>
+     Created by Aslan Ulasbek &amp; Sultonbek Ibrokhimov
+    </p>
+    <p class="current-date-time" id="current-date-time">
+    </p>
+    <p class="photo-credit">
+     Student cafe concept &middot; Illustrative photography from
+     <a href="https://www.pexels.com/">
+      Pexels
+     </a>
+     .
+     <a href="PHOTO_SOURCES.md">
+      Photo sources
+     </a>
+     .
+    </p>
+   </div>
+  </footer>
+  <script src="vendor/bootstrap.bundle.min.js">
+  </script>
+  <script src="js/validation.js">
+  </script>
+  <script src="js/base.js">
+  </script>
+  <script src="js/app.js">
+  </script>
+  <script src="js/advanced.js">
+  </script>
+  <script src="js/menu-data.js">
+  </script>
+  <script src="js/catalog.js">
+  </script>
+  <script src="js/admin.js">
+  </script>
+  <script src="js/order.js">
+  </script>
+ </body>
+</html>
+

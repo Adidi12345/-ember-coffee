@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EMBER COFFEE | Home</title>
+        <link href="vendor/bootstrap.min.css" rel="stylesheet" />
+        <script src="js/store.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/final.css" />
+        <script src="vendor/jquery-4.0.0.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <div
+            class="scroll-progress"
+            role="progressbar"
+            aria-label="Reading progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+        >
+            <span></span>
+        </div>
+        <div id="toast-message" class="ember-toast" role="status" aria-live="polite"></div>
+
+        <!-- Navigation -->
+        <header id="main-header">
+            <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+                <div class="container">
+                    <a href="index.html" class="navbar-brand logo">EMBER.</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#primary-navigation"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="primary-navigation">
+                        <ul class="navbar-nav ms-auto nav-menu">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link active" aria-current="page"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">Our Story</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Visit Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="gallery.html" class="nav-link">Gallery</a>
+                            </li>
+                        <li class="nav-item"><a href="login.html" class="nav-link" id="account-link">Sign in</a></li>
+                        </ul>
+                        <div class="appearance-tools" aria-label="Appearance">
+                            <button type="button" class="appearance-button" id="change-background" title="Change page color">◐ <span id="palette-name">Cream</span></button>
+                            <button type="button" class="appearance-button" id="theme-toggle" aria-pressed="false">☾ <span>Dark mode</span></button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <!-- Hero section -->
+            <section class="hero">
+                <img
+                    src="images/hero.jpg"
+                    alt="Warm cafe counter with a menu board and pastry display"
+                    width="1600"
+                    height="1000"
+                    decoding="async"
+                    fetchpriority="high"
+                />
+
+                <div class="hero-overlay"></div>
+
+                <div class="container">
+                    <div class="hero-text">
+                        <p class="label">Specialty coffee • Astana</p>
+
+                        <h1>Made for<br />slow mornings.</h1>
+
+                        <p>
+                            Warm light, freshly roasted beans, and a quiet place to stay a little
+                            longer.
+                        </p>
+
+                        <div class="hero-actions" role="group" aria-label="Explore EMBER">
+                            <a href="menu.html" class="btn btn-primary button btn-lg">
+                                Explore the menu
+                            </a>
+                            <a href="about.html" class="btn btn-outline-light btn-lg"> Our story </a>
+                            <button
+                                type="button"
+                                class="hero-newsletter"
+                                id="open-subscription"
+                            >
+                                Join the EMBER list
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="weather-section" aria-labelledby="weather-heading">
+                <div class="container weather-layout">
+                    <div><p class="label">A cup for the forecast</p><h2 id="weather-heading">Outside in Astana.</h2><p>Whatever the weather, take a moment for yourself.</p></div>
+                    <div class="weather-card" id="weather-card" aria-busy="true">
+                        <p id="weather-status" role="status">Loading current weather…</p>
+                        <div id="weather-result" hidden><p class="weather-temperature" id="weather-temperature"></p><p id="weather-description"></p><p id="weather-recommendation"></p><a href="menu.html?drink=cappuccino" class="text-link" id="weather-drink-link">View drink →</a></div>
+                        <div class="weather-footer"><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Weather by Open-Meteo</a><button class="appearance-button" type="button" id="weather-refresh">Refresh</button></div>
+                    </div>
+                </div>
+            </section>
+            <section class="cafe-hours-bar" aria-label="Cafe opening status">
+                <div class="container cafe-hours-content">
+                    <strong id="open-status" role="status">Checking hours…</strong>
+                    <span id="today-hours">Hours in Astana</span>
+                    <a href="contact.html" class="text-link">Visit Us →</a>
+                </div>
+            </section>
+            <!-- Philosophy -->
+            <section class="section">
+                <div class="container">
+                    <div class="row philosophy g-5 align-items-start">
+                        <div class="col-12 col-lg-6">
+                            <p class="label">Our philosophy</p>
+
+                            <h2>
+                                Coffee should feel<br />
+                                like a ritual.
+                            </h2>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <p>
+                                We buy small lots from roasters we actually know, and we taste every
+                                batch before it reaches the bar. Nothing here is rushed, because a
+                                cup made in a hurry tastes like one.
+                            </p>
+
+                            <p>What we care about, in order:</p>
+
+                            <ul>
+                                <li>Beans chosen for one season, not for the whole year</li>
+
+                                <li>Preparation that follows the coffee instead of the clock</li>
+
+                                <li>A room quiet enough to hear the person across the table</li>
+
+                                <li>
+                                    Staying <span class="highlight">a little longer</span>
+                                    than you planned
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- House favorites -->
+            <section class="section">
+                <div class="container px-sm-2">
+                    <p class="label">House favorites</p>
+
+                    <h2>What people order most.</h2>
+
+                    <!-- Bootstrap card grid -->
+                    <div class="card-grid row g-5 mt-5">
+                        <!-- Card 1 -->
+                        <div class="card-grid-item col-12 col-sm-6 col-lg-4">
+                            <article class="card ember-card h-100">
+                                <img
+                                    src="images/espresso.jpg"
+                                    alt="Espresso in a red cup beside roasted coffee beans"
+                                    class="card-img-top"
+                                    width="800"
+                                    height="600"
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-number">No. 01</p>
+
+                                    <h3 class="card-title">Espresso</h3>
+
+                                    <p class="card-text">
+                                        Dark chocolate and dried plum, pulled short. The quickest
+                                        way to taste the bean we are working with today.
+                                    </p>
+
+                                    <a
+                                        href="menu.html"
+                                        class="btn btn-outline-primary button button-dark btn-sm mt-auto align-self-start"
+                                    >
+                                        View menu
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="card-grid-item col-12 col-sm-6 col-lg-4">
+                            <article class="card ember-card h-100">
+                                <img
+                                    src="images/latte.jpg"
+                                    alt="Latte with milk foam in a glass cup on a saucer"
+                                    class="card-img-top"
+                                    width="800"
+                                    height="600"
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-number">No. 02</p>
+
+                                    <h3 class="card-title">Velvet Latte</h3>
+
+                                    <p class="card-text">
+                                        Milk steamed slowly until it turns glossy, poured over a
+                                        double shot. Soft, warm and quietly sweet.
+                                    </p>
+
+                                    <a
+                                        href="menu.html"
+                                        class="btn btn-outline-primary button button-dark btn-sm mt-auto align-self-start"
+                                    >
+                                        View menu
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="card-grid-item col-12 col-sm-6 col-lg-4">
+                            <article class="card ember-card h-100">
+                                <img
+                                    src="images/cappuccino.jpg"
+                                    alt="Cappuccino with latte art in a ribbed ceramic cup"
+                                    class="card-img-top"
+                                    width="800"
+                                    height="600"
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-number">No. 03</p>
+
+                                    <h3 class="card-title">Cappuccino</h3>
+
+                                    <p class="card-text">
+                                        Equal parts coffee, milk and foam. Made the traditional way,
+                                        in a small cup, best before eleven.
+                                    </p>
+
+                                    <a
+                                        href="menu.html"
+                                        class="btn btn-outline-primary button button-dark btn-sm mt-auto align-self-start"
+                                    >
+                                        View menu
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dark quote band -->
+            <section class="quote">
+                <div class="container">
+                    <h2>“There is always time for one more cup.”</h2>
+                </div>
+            </section>
+
+            <section class="section stats-section">
+                <div class="container">
+                    <p class="label">Make time for coffee</p>
+                    <h2>A few good reasons to stay.</h2>
+                    <div class="stats-grid">
+                        <div>
+                            <strong class="number-counter" data-count="11">0</strong>
+                            <p>Menu favorites</p>
+                        </div>
+                        <div>
+                            <strong class="number-counter" data-count="7">0</strong>
+                            <p>Days a week</p>
+                        </div>
+                        <div>
+                            <strong class="number-counter" data-count="16">0</strong>
+                            <p>Hours steeping our cold brew</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="subscription-backdrop" id="subscription-popup" hidden="">
+            <section
+                class="subscription-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="subscription-title"
+                aria-describedby="subscription-description"
+                tabindex="-1"
+            >
+                <button
+                    type="button"
+                    class="subscription-close"
+                    id="close-subscription"
+                    aria-label="Close subscription form"
+                >
+                    ×
+                </button>
+                <p class="label">A little more EMBER</p>
+                <h2 id="subscription-title">Join our list.</h2>
+                <p id="subscription-description">
+                    Try our newsletter signup. This demo validates your name and email without
+                    sending or storing them.
+                </p>
+                <form id="subscription-form" novalidate="">
+                    <div class="subscription-field">
+                        <label for="subscription-name">Name</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="subscription-name"
+                            name="name"
+                            autocomplete="name"
+                            aria-describedby="subscription-name-error"
+                        />
+                        <span class="field-error" id="subscription-name-error"></span>
+                    </div>
+                    <div class="subscription-field">
+                        <label for="subscription-email">Email</label>
+                        <input
+                            class="form-control"
+                            type="text" inputmode="email"
+                            id="subscription-email"
+                            name="email"
+                            autocomplete="email"
+                            aria-describedby="subscription-email-error"
+                        />
+                        <span class="field-error" id="subscription-email-error"></span>
+                    </div>
+
+                    <button class="btn btn-primary button" type="submit">Subscribe</button>
+                    <p
+                        class="subscription-success"
+                        id="subscription-success"
+                        role="status"
+                        hidden=""
+                    >
+                        Thank you! The demo signup is complete. Your details have not been sent or
+                        stored.
+                    </p>
+                </form>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>EMBER COFFEE · Astana, Kazakhstan</p>
+
+                <p>Created by Aslan Ulasbek &amp; Sultonbek Ibrokhimov</p>
+                <p class="current-date-time" id="current-date-time"></p>
+                <p class="photo-credit">
+                    Student cafe concept · Illustrative photography from
+                    <a href="https://www.pexels.com/">Pexels</a>.
+                    <a href="PHOTO_SOURCES.md">Photo sources</a>.
+                </p>
+            </div>
+        </footer>
+
+        <script src="vendor/bootstrap.bundle.min.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/base.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/advanced.js"></script>
+    <script src="js/weather.js"></script>
+            <script src="js/menu-data.js"></script>
+        <script src="js/catalog.js"></script>
+        <script src="js/hours.js"></script>
+        <script src="js/order.js"></script>
+    </body>
+</html>
